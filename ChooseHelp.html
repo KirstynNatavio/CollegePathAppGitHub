@@ -1,0 +1,260 @@
+<html>
+	<head>
+		<!--CHOOSING BOX WITH LINK TO ANOTHER PAGE-->
+		<meta name="author" content="Codrops" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,800,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/set1.css" />
+
+		<!--DATABASE-->
+		<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+	</head>	
+	<body style="background-image:url('http://wallpapercave.com/wp/4gTNThG.png'); background-size:100% 100%;">
+		<style type="text/css">
+			@font-face {
+				font-weight: normal;
+				font-style: normal;
+				font-family: 'feathericons';
+				src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
+				src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
+					url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
+					url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
+					url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
+			}
+
+			.grid {
+				position: relative;
+				margin: 0 auto;
+				padding: 1em 0 4em;
+				max-width: 300px;
+				list-style: none;
+				text-align: center;
+			}
+
+			/* Common style */
+			.grid figure {
+				position: relative;
+				float: left;
+				overflow: hidden;
+				margin: 10px 1%;
+				min-width: 320px;
+				max-width: 480px;
+				max-height: 360px;
+				width: 48%;
+				background: #3085a3;
+				text-align: center;
+				cursor: pointer;
+			}
+
+			.grid figure img {
+				position: relative;
+				display: block;
+				min-height: 100%;
+				max-width: 100%;
+				opacity: 0.8;
+			}
+
+			.grid figure figcaption {
+				padding: 2em;
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 1.25em;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+
+			.grid figure figcaption::before,
+			.grid figure figcaption::after {
+				pointer-events: none;
+			}
+
+			.grid figure figcaption,
+			.grid figure figcaption > a {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			/* Anchor will cover the whole item by default */
+			/* For some effects it will show as a button */
+			.grid figure figcaption > a {
+				z-index: 1000;
+				text-indent: 200%;
+				white-space: nowrap;
+				font-size: 0;
+				opacity: 0;
+			}
+
+			.grid figure h2 {
+				word-spacing: -0.15em;
+				font-weight: 300;
+			}
+
+			.grid figure h2 span {
+				font-weight: 800;
+			}
+
+			.grid figure h2,
+			.grid figure p {
+				margin: 0;
+			}
+
+			.grid figure p {
+				letter-spacing: 1px;
+				font-size: 68.5%;
+			}
+			figure.effect-layla {
+				background: #18a367;
+			}
+
+			figure.effect-layla img {
+				height: 390px;
+			}
+
+			figure.effect-layla figcaption {
+				padding: 3em;
+			}
+
+			figure.effect-layla figcaption::before,
+			figure.effect-layla figcaption::after {
+				position: absolute;
+				content: '';
+				opacity: 0;
+			}
+
+			figure.effect-layla figcaption::before {
+				top: 50px;
+				right: 30px;
+				bottom: 50px;
+				left: 30px;
+				border-top: 1px solid #fff;
+				border-bottom: 1px solid #fff;
+				-webkit-transform: scale(0,1);
+				transform: scale(0,1);
+				-webkit-transform-origin: 0 0;
+				transform-origin: 0 0;
+			}
+
+			figure.effect-layla figcaption::after {
+				top: 30px;
+				right: 50px;
+				bottom: 30px;
+				left: 50px;
+				border-right: 1px solid #fff;
+				border-left: 1px solid #fff;
+				-webkit-transform: scale(1,0);
+				transform: scale(1,0);
+				-webkit-transform-origin: 100% 0;
+				transform-origin: 100% 0;
+			}
+
+			figure.effect-layla h2 {
+				padding-top: 26%;
+				-webkit-transition: -webkit-transform 0.35s;
+				transition: transform 0.35s;
+			}
+
+			figure.effect-layla p {
+				padding: 0.5em 2em;
+				text-transform: none;
+				opacity: 0;
+				-webkit-transform: translate3d(0,-10px,0);
+				transform: translate3d(0,-10px,0);
+			}
+
+			figure.effect-layla img,
+			figure.effect-layla h2 {
+				-webkit-transform: translate3d(0,-30px,0);
+				transform: translate3d(0,-30px,0);
+			}
+
+			figure.effect-layla img,
+			figure.effect-layla figcaption::before,
+			figure.effect-layla figcaption::after,
+			figure.effect-layla p {
+				-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+				transition: opacity 0.35s, transform 0.35s;
+			}
+
+			figure.effect-layla:hover img {
+				opacity: 0.7;
+				-webkit-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0);
+			}
+
+			figure.effect-layla:hover figcaption::before,
+			figure.effect-layla:hover figcaption::after {
+				opacity: 1;
+				-webkit-transform: scale(1);
+				transform: scale(1);
+			}
+
+			figure.effect-layla:hover h2,
+			figure.effect-layla:hover p {
+				opacity: 1;
+				-webkit-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0);
+			}
+
+			figure.effect-layla:hover figcaption::after,
+			figure.effect-layla:hover h2,
+			figure.effect-layla:hover p,
+			figure.effect-layla:hover img {
+				-webkit-transition-delay: 0.15s;
+				transition-delay: 0.15s;
+			}
+		</style>
+		<div class="grid">
+			<figure class="effect-layla" style="left:-400px; top:50px;">
+				<img src="https://wmx-api-production.s3.amazonaws.com/ACTvsSAT.png" width="100%">
+				<figcaption>
+					<h2>SAT/ACT <span>Standardized Tests</span></h2>
+					<p>Do you struggle with standardized tests but cannot afford tutoring?</p>
+					<a href="satact.html">View more</a>
+					<!--http://media.cagle.com/46/2014/03/06/145361_600.jpg    PICTURE FOR PAGE-->
+				</figcaption>			
+			</figure>
+			<figure class="effect-layla" style="top:-330px">
+				<img src="http://1.bp.blogspot.com/-ltSK2jPeeg0/VFGlV2cDjYI/AAAAAAAAGiY/GUFK0C-hST4/s1600/Student3.gif" width="100%">
+				<figcaption>
+					<h2>College <span>Applications</span></h2>
+					<p>Do you need help with college applications but do not know where to start?</p>
+					<a href="collegeapplications.html">View more</a>
+
+
+					<!--http://www.hercampus.com/sites/default/files/styles/full_width_embed/public/2013/10/18/college-admissions1.gif?itok=hO87JSNZ   PICTURE FOR PAGE-->
+
+
+				</figcaption>			
+			</figure>
+			<figure class="effect-layla" style="top:-710px; left:400px">
+				<img src="http://soemberg.dk/wp-content/uploads/2014/09/homework-clipart.png"/>
+				<figcaption>
+					<h2>Subjects <span>Homework</span></h2>
+					<p>Do you need help understanding homework or topics in your classes?</p>
+					<a href="subjectshomework.html">View more</a>
+
+
+					<!--http://hardik.practutor.com/wp-content/uploads/2012/12/BadGradeClipArt.jpg-->
+				</figcaption>			
+			</figure>
+		</div>
+		<!-- ... -->
+		<script type="text/javascript">
+			var username;
+			var password;
+			var reenterpassword;
+			var accounts = new Firebase('https://collegepath.firebaseio.com/');
+			accounts.on("value", function(snapshot) {
+			  console.log(snapshot.val());
+			}, function (errorObject) {
+			  console.log("The read failed: " + errorObject.code);
+			});
+		</script>
+	</body>
+
+</html>
+

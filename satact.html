@@ -1,0 +1,368 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Standardized Tests</title>
+		<meta name="author" content="Codrops" />
+		<link rel="stylesheet" type="text/css" href="ArticleIntroEffects/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="ArticleIntroEffects/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="ArticleIntroEffects/css/component.css" />
+		
+		<link rel="stylesheet" type="text/css" href="AnimatedCheckboxes/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="AnimatedCheckboxes/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="AnimatedCheckboxes/css/component.css" />
+		<script src="AnimatedCheckboxes/js/modernizr.custom.js"></script>
+		<!--DATABASE-->
+		<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+
+	</head>
+	<body class="demo-3">
+		<div id="container" class="container intro-effect-sliced">
+			<!-- Top Navigation -->
+			<header class="header">
+				<div class="bg-img"><img src="http://fakulteti.edukacija.rs/wp-content/uploads/2014/09/testovi-za-fakultete.jpg"/></div>
+				<div class="title">
+					<h1>Do you struggle with standardized tests but cannot afford tutoring?</h1>
+				</div>
+				<div class="bg-img"><img src="http://fakulteti.edukacija.rs/wp-content/uploads/2014/09/testovi-za-fakultete.jpg" /></div>
+			</header>
+			<button class="trigger" data-info="Do you struggle with standardized tests?"><span>Trigger</span></button>
+			<div class="container">
+				<section>
+					<form class="ac-custom ac-checkbox ac-boxfill" autocomplete="off">
+						<h2>Where do you need help?</h2>
+						<ul>
+							<li><input id="sat" name="sat" type="checkbox" onclick="showSAT();"><label for="sat">SAT</label></li>
+							<li><input id="act" name="act" type="checkbox" onclick="showACT();"><label for="act">ACT</label></li>
+						</ul>
+					</form>
+				</section> 
+				<section id="satSections">
+					<form class="ac-custom ac-checkbox ac-boxfill" autocomplete="off">
+						<h2>In what sections do you need help?</h2>
+						<ul>
+							<li><input id="satmath" name="satmath" type="checkbox" onclick="SATmath();"><label for="satmath">Math</label></li>
+							<li><input id="satreading" name="satreading" type="checkbox" onclick="SATreading();"><label for="satreading">Critical Reading</label></li>
+							<li><input id="satwriting" name="satwriting" type="checkbox" onclick="SATwriting();"><label for="satwriting">Writing</label></li>
+						</ul>
+					</form>
+				</section>
+				<section id="actSections">
+					<form class="ac-custom ac-checkbox ac-boxfill" autocomplete="off">
+						<h2>In what sections do you need help?</h2>
+						<ul>
+							<li><input id="actenglish" name="actenglish" type="checkbox" onclick="ACTenglish();"><label for="actenglish">English</label></li>
+							<li><input id="actmath" name="actmath" type="checkbox" onclick="ACTmath();"><label for="actmath">Math</label></li>
+							<li><input id="actscience" name="actscience" type="checkbox" onclick="ACTscience();"><label for="actscience">Science</label></li>
+							<li><input id="actreading" name="actreading" type="checkbox" onclick="ACTreading();"><label for="actreading">Reading</label></li>
+							<li><input id="actwriting" name="actwriting" type="checkbox" onclick="ACTwriting();"><label for="actwriting">Writing</label></li>
+						</ul>
+					</form>
+				</section>
+				<section>
+					<form class="ac-custom ac-radio ac-fill" autocomplete="off" id="assistanceChoice">
+						<h2>How do you prefer to receive assistance?</h2>
+						<ul>
+							<li><input id="r1" name="r1" type="radio" onclick="online();"><label for="r1">Online</label></li>
+							<li><input id="r2" name="r1" type="radio" onclick="inperson();"><label for="r2">In person</label></li>
+						</ul>
+					</form>
+				</section>
+			</div>
+			<script src="AnimatedCheckboxes/js/svgcheckbx.js"></script>
+			<article class="content">
+				<div>
+			
+				<!--
+					<h1>Where do you need help?</h1>
+					<input type="checkbox" name="vehicle" value="Car">SAT 
+					<input type="checkbox" name="vehicle" value="Car">ACT
+
+					<form>
+					    <fieldset data-role="controlgroup" data-type="horizontal">
+					        <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a">
+					        <label for="checkbox-h-2a">SAT</label>
+					        <input type="checkbox" name="checkbox-h-2b" id="checkbox-h-2b">
+					        <label for="checkbox-h-2b">ACT</label>
+					    </fieldset>
+					</form>-->
+					<!--
+					<p>We may define a food to be any substance which will repair the functional waste of the body, increase its growth, or maintain the heat, muscular, and nervous energy. </p>
+					<p>In its most comprehensive sense, the oxygen of the air is a food; as although it is admitted by the lungs, it passes into the blood, and there re-acts upon the other food which has passed through the stomach. It is usual, however, to restrict the term food to such nutriment as enters the body by the intestinal canal. Water is often spoken of as being distinct from food, but for this there is no sufficient reason.</p>
+					<p>Many popular writers have divided foods into flesh-formers, heat-givers, and bone-formers. Although attractive from its simplicity, this classification will not bear criticism. Flesh-formers are also heat-givers. Only a portion of the mineral matter goes to form bone.</p>
+					<p>These last are not strictly foods, if we keep to the definition already given; but they are consumed with the true foods or nutrients, comprised in the other two classes, and cannot well be excluded from consideration.</p>
+					<p>Water forms an essential part of all the tissues of the body. It is the solvent and carrier of other substances.</p>
+					<p>Mineral Matter or Salts, is left as an ash when food is thoroughly burnt. The most important salts are calcium phosphate, carbonate and fluoride, sodium chloride, potassium phosphate and chloride, and compounds of magnesium, iron and silicon.</p>
+					<h3>Flesh-formers, heat-givers, and bone-formers</h3>
+					<p><strong>Excerpt from: <a href="http://www.gutenberg.org/ebooks/15237">The Chemistry of Food and Nutrition</a> by A. W. Duncan</strong></p>-->
+				</div>
+			</article>
+		</div><!-- /container -->
+		<script src="ArticleIntroEffects/js/classie.js"></script>
+		<script>
+			//document.getElementById("satSections").style.display = "none";
+			//document.getElementById("actSections").style.display = "none";
+			var username;
+			var accounts = new Firebase('https://collegepath.firebaseio.com/');
+			function showSAT(){
+				if (document.getElementById('sat').checked){
+					console.log("SAT WAS SELECTED");
+					document.getElementById("satSections").style.display = "display";
+				}
+			}
+			function showACT(){
+				if (document.getElementById('act').checked){
+					console.log("ACT WAS SELECTED");
+					document.getElementById("actSections").style.display = "display";
+				}
+			}
+
+			var testsHelp = [];
+			function SATmath(){
+				if (document.getElementById('satmath').checked){
+					console.log("SAT MATH WAS SELECTED");
+					testsHelp.push("SATmath");
+					console.log(testsHelp);
+				}
+				else {
+					testsHelp.pop("SATmath");
+					console.log(testsHelp);
+				}
+			}
+			function SATreading(){
+				if (document.getElementById('satreading').checked){
+					console.log("SAT READING WAS SELECTED");
+					testsHelp.push("SATreading");
+					console.log(testsHelp);
+				}
+				else {
+					testsHelp.pop("SATreading");
+					console.log(testsHelp);
+				}
+			}
+			function SATwriting(){
+				if (document.getElementById('satwriting').checked){
+					console.log("SAT WRITING WAS SELECTED");
+					testsHelp.push("SATwriting");
+					console.log(testsHelp);
+				}
+				else {
+					testsHelp.pop("SATwriting");
+					console.log(testsHelp);
+				}
+			}
+			function ACTenglish(){
+				if (document.getElementById('actenglish').checked){
+					console.log("ACT ENGLISH WAS SELECTED");
+					testsHelp.push("ACTenglish");
+					console.log(testsHelp);
+				}
+				else {
+					testsHelp.pop("ACTenglish");
+					console.log(testsHelp);
+				}
+			}
+			function ACTmath(){
+				if (document.getElementById('actmath').checked){
+					console.log("ACT MATH WAS SELECTED");
+					testsHelp.push("ACTmath");
+					console.log(testsHelp);
+				}
+				else {
+					testsHelp.pop("ACTmath");
+					console.log(testsHelp);
+				}
+			}
+			function ACTscience(){
+				if (document.getElementById('actscience').checked){
+					console.log("ACT SCIENCE WAS SELECTED");
+					testsHelp.push("ACTscience");
+					console.log(testsHelp);
+				}
+				else {
+					testsHelp.pop("ACTscience");
+					console.log(testsHelp);
+				}
+			}
+			function ACTreading(){
+				if (document.getElementById('actreading').checked){
+					console.log("ACT READING WAS SELECTED");
+					testsHelp.push("ACTreading");
+					console.log(testsHelp);
+				}
+				else {
+					testsHelp.pop("ACTreading");
+					console.log(testsHelp);
+				}
+			}
+			function ACTwriting(){
+				if (document.getElementById('actwriting').checked){
+					console.log("ACT WRITING WAS SELECTED");
+					testsHelp.push("ACTwriting");
+					console.log(testsHelp);
+				}
+				else {
+					testsHelp.pop("ACTwriting");
+					console.log(testsHelp);
+				}
+			}
+			function online(){
+				var onlineCheck = document.getElementById('r1').checked;
+				if (onlineCheck == true){
+					console.log("ONLINE ASSISTANCE WAS SELECTED");
+				}
+			}
+			function inperson(){
+				var inpersonCheck = document.getElementById('r2').checked;
+				if (inpersonCheck == true){
+					console.log("INPERSON ASSISTANCE WAS SELECTED");
+				}
+			}
+
+			//Addresses.child(username+'/addresses/'+ name).update({name: name, address: address, contacts:listOfContacts, on:1});
+
+			(function() {
+
+				// detect if IE : from http://stackoverflow.com/a/16657946		
+				var ie = (function(){
+					var undef,rv = -1; // Return value assumes failure.
+					var ua = window.navigator.userAgent;
+					var msie = ua.indexOf('MSIE ');
+					var trident = ua.indexOf('Trident/');
+
+					if (msie > 0) {
+						// IE 10 or older => return version number
+						rv = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+					} else if (trident > 0) {
+						// IE 11 (or newer) => return version number
+						var rvNum = ua.indexOf('rv:');
+						rv = parseInt(ua.substring(rvNum + 3, ua.indexOf('.', rvNum)), 10);
+					}
+
+					return ((rv > -1) ? rv : undef);
+				}());
+
+
+				// disable/enable scroll (mousewheel and keys) from http://stackoverflow.com/a/4770179					
+				// left: 37, up: 38, right: 39, down: 40,
+				// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+				var keys = [32, 37, 38, 39, 40], wheelIter = 0;
+
+				function preventDefault(e) {
+					e = e || window.event;
+					if (e.preventDefault)
+					e.preventDefault();
+					e.returnValue = false;  
+				}
+
+				function keydown(e) {
+					for (var i = keys.length; i--;) {
+						if (e.keyCode === keys[i]) {
+							preventDefault(e);
+							return;
+						}
+					}
+				}
+
+				function touchmove(e) {
+					preventDefault(e);
+				}
+
+				function wheel(e) {
+					// for IE 
+					//if( ie ) {
+						//preventDefault(e);
+					//}
+				}
+
+				function disable_scroll() {
+					window.onmousewheel = document.onmousewheel = wheel;
+					document.onkeydown = keydown;
+					document.body.ontouchmove = touchmove;
+				}
+
+				function enable_scroll() {
+					window.onmousewheel = document.onmousewheel = document.onkeydown = document.body.ontouchmove = null;  
+				}
+
+				var docElem = window.document.documentElement,
+					scrollVal,
+					isRevealed, 
+					noscroll, 
+					isAnimating,
+					container = document.getElementById( 'container' ),
+					trigger = container.querySelector( 'button.trigger' );
+
+				function scrollY() {
+					return window.pageYOffset || docElem.scrollTop;
+				}
+				
+				function scrollPage() {
+					scrollVal = scrollY();
+					
+					if( noscroll && !ie ) {
+						if( scrollVal < 0 ) return false;
+						// keep it that way
+						window.scrollTo( 0, 0 );
+					}
+
+					if( classie.has( container, 'notrans' ) ) {
+						classie.remove( container, 'notrans' );
+						return false;
+					}
+
+					if( isAnimating ) {
+						return false;
+					}
+					
+					if( scrollVal <= 0 && isRevealed ) {
+						toggle(0);
+					}
+					else if( scrollVal > 0 && !isRevealed ){
+						toggle(1);
+					}
+				}
+
+				function toggle( reveal ) {
+					isAnimating = true;
+					
+					if( reveal ) {
+						classie.add( container, 'modify' );
+					}
+					else {
+						noscroll = true;
+						disable_scroll();
+						classie.remove( container, 'modify' );
+					}
+
+					// simulating the end of the transition:
+					setTimeout( function() {
+						isRevealed = !isRevealed;
+						isAnimating = false;
+						if( reveal ) {
+							noscroll = false;
+							enable_scroll();
+						}
+					}, 600 );
+				}
+
+				// refreshing the page...
+				var pageScroll = scrollY();
+				noscroll = pageScroll === 0;
+				
+				disable_scroll();
+				
+				if( pageScroll ) {
+					isRevealed = true;
+					classie.add( container, 'notrans' );
+					classie.add( container, 'modify' );
+				}
+				
+				window.addEventListener( 'scroll', scrollPage );
+				trigger.addEventListener( 'click', function() { toggle( 'reveal' ); } );
+			})();
+		</script>
+	</body>
+
+</html>

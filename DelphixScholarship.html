@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>CollegePath</title>
+		
+		<!--INTRODUCTION-->
+		<link rel="stylesheet" type="text/css" href="RotatingImageSlider/css/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css' />
+	</head>
+	<body style="background-image:url('http://wallpapercave.com/wp/4gTNThG.png'); background-size:100% 100%;">
+		<div data-role="page" id="HomePage">
+			<div data-role="main" class="ui-content">
+				<div>
+					<div class="content">
+						<h1>CollegePath</h1>
+						<div class="rm_wrapper">
+							<div id="rm_container" class="rm_container">
+								<ul>
+									<li data-images="rm_container_1" data-rotation="-15"><img src="RotatingImageSlider/images/1.jpg"/></li>
+									<li data-images="rm_container_2" data-rotation="-5"><img src="RotatingImageSlider/images/2.jpg"/></li>
+									<li data-images="rm_container_3" data-rotation="5"><img src="RotatingImageSlider/images/3.jpg"/></li>
+									<li data-images="rm_container_4" data-rotation="15"><img src="RotatingImageSlider/images/4.jpg"/></li>
+								</ul>
+								<div id="rm_mask_left" class="rm_mask_left"></div>
+								<div id="rm_mask_right" class="rm_mask_right"></div>
+								<div id="rm_corner_left" class="rm_corner_left"></div>
+								<div id="rm_corner_right" class="rm_corner_right"></div>
+								<h2>Are you falling behind?</h2>
+								<div style="display:none;">
+									<div id="rm_container_1">
+										<img src="RotatingImageSlider/images/1.jpg"/>
+										<img src="RotatingImageSlider/images/5.jpg"/>
+										<img src="RotatingImageSlider/images/6.jpg"/>
+									</div>
+									<div id="rm_container_2">
+										<img src="RotatingImageSlider/images/2.jpg"/>
+										<img src="RotatingImageSlider/images/7.jpg"/>
+										<img src="RotatingImageSlider/images/8.jpg"/>
+									</div>
+									<div id="rm_container_3">
+										<img src="RotatingImageSlider/images/3.jpg"/>
+										<img src="RotatingImageSlider/images/9.jpg"/>
+										<img src="RotatingImageSlider/images/10.jpg"/>
+									</div>
+									<div id="rm_container_4">
+										<img src="RotatingImageSlider/images/4.jpg"/>
+										<img src="RotatingImageSlider/images/11.jpg"/>
+										<img src="RotatingImageSlider/images/12.jpg"/>
+									</div>
+								</div>
+							</div>
+							<div class="rm_nav">
+								<a id="rm_next" href="#" class="rm_next"></a>
+								<a id="rm_prev" href="#" class="rm_prev"></a>
+							</div>
+							<div class="rm_controls">
+								<a id="rm_play" href="#" class="rm_play">Play</a>
+								<a id="rm_pause" href="#" class="rm_pause">Pause</a>
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+					<script type="text/javascript" src="RotatingImageSlider/js/jquery.transform-0.9.3.min_.js"></script>
+					<script type="text/javascript" src="RotatingImageSlider/js/jquery.mousewheel.js"></script>
+					<script type="text/javascript" src="RotatingImageSlider/js/jquery.RotateImageMenu.js"></script>
+				</div>
+			</div>
+			<button style="position:absolute; top:50px; right:20px; height:50px; width:100px; " class="button" onclick="window.location.href = 'SignIn.html';">Yes!</button>
+		</div>
+	</body>
+</html> 
