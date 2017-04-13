@@ -1,17 +1,11 @@
-Hover Effect Ideas
-=========
+Web app that provides resource for high school students to ease their
+transition from high school to college (preparing them to be
+college-ready)
 
-Some inspiration and modern ideas for subtle hover effects.
+IMPORTANT NOTES:
+CollegePath is still a work in progress.
+Start by opening the mainPage.html file, which is the first page in this web app
+This web app includes help in three areas: SAT/ACT Standardized Tests, College Applications and Subjects Homework
 
-[Article on Codrops](http://tympanus.net/codrops/?p=19292)
-
-[Demo](http://tympanus.net/Development/HoverEffectIdeas/)
-
-Images by [Unsplash](http://unsplash.com/). [Feather Icons](https://gumroad.com/l/feather) by Cole Bemis. 
-[Font Awesome Icon Font] (http://fortawesome.github.io/Font-Awesome/) created by Dave Gandy.
-
-Integrate or build upon it for free in your personal or commercial projects. Don't republish, redistribute or sell "as-is". 
-
-Read more here: [License](http://tympanus.net/codrops/licensing/)
-
-[© Codrops 2014](http://www.codrops.com)
+Technologies: Firebase, Codrops API
+Coded in: JavaScript, HTML
